@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-title>{{formAction}} Produto</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Id" readonly
+                   [(ngModel)]="produto.id" name="id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descricao"
+                   [(ngModel)]="produto.descricao" name="descricao">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preço (EUR)"
+                   [(ngModel)]="produto.preco" name="preco">
+        </mat-form-field>
+    </form>
+
+    <button *ngIf="opType == 'create'" mat-raised-button (click)="createProduto()" color="primary">
+        Salvar
+    </button>
+    <button *ngIf="opType == 'update'" mat-raised-button (click)="updateProduto()" color="primary">
+        Atualizar
+    </button>
+    <button *ngIf="opType == 'delete'" mat-raised-button (click)="deleteProduto()" color="warn">
+        Excluir
+    </button>
+
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
+
