@@ -33,6 +33,11 @@ import { registerLocaleData } from  '@angular/common';
 import { ForDirective } from './directives/for.directive';
 import { ProdutoFormComponent } from './components/produto/produto-form/produto-form.component';
 
+import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
+import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
+import { ClienteFormComponent } from './components/cliente/cliente-form/cliente-form.component';
+
+
 registerLocaleData(localePt);
 
 @NgModule({
@@ -46,7 +51,10 @@ registerLocaleData(localePt);
     RedDirective,
     ForDirective,
     ProdutoFormComponent,
-    ProdutoCrudComponent
+    ProdutoCrudComponent,
+    ClienteCrudComponent,
+    ClienteListComponent,
+    ClienteFormComponent
   ],
   imports: [
     BrowserModule,

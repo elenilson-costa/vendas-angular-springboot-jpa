@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-title>{{formAction}} Cliente</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Id" readonly
+                   [(ngModel)]="cliente.id" name="id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                   [(ngModel)]="cliente.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Endereço"
+                   [(ngModel)]="cliente.endereco" name="endereco">
+        </mat-form-field>
+    </form>
+
+    <button *ngIf="opType == 'create'" mat-raised-button (click)="createCliente()" color="primary">
+        Salvar
+    </button>
+    <button *ngIf="opType == 'update'" mat-raised-button (click)="updateCliente()" color="primary">
+        Atualizar
+    </button>
+    <button *ngIf="opType == 'delete'" mat-raised-button (click)="deleteCliente()" color="warn">
+        Excluir
+    </button>
+
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
+
