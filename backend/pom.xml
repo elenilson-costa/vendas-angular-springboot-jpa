@@ -9,11 +9,11 @@
 		<version>2.1.7.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.educandoweb</groupId>
-	<artifactId>course</artifactId>
+	<groupId>com.ecsolutions</groupId>
+	<artifactId>projeto_vendas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>course</name>
-	<description>Course Spring Boot</description>
+	<description>Projeto Vendas Spring Boot</description>
 
 	<properties>
 		<java.version>11</java.version>
