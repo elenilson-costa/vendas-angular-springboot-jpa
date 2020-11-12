@@ -40,6 +40,9 @@ public class TesteOps implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
+		
+		/*
+		Cliente cliente = clienteService.insert(new Cliente(1L, "Francisco Coimbra", "Av. do Descobrimento"));
 		Cliente cliente = clienteService.findById(1L);
 		Instant instant = Instant.parse("2020-10-22T11:00:00Z"); 
 		Pedido pedido = pedidoService.insert(new Pedido(null, cliente, instant));
@@ -54,6 +57,7 @@ public class TesteOps implements CommandLineRunner {
 		
 		pedido.setPagamentoPedido(pagamentoPedido);
 		PedidoRepository.save(pedido);
+		*/
 
 	}
 	
