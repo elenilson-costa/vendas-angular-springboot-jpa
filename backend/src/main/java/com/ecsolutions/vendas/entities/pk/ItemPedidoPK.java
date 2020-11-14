@@ -2,12 +2,12 @@ package com.ecsolutions.vendas.entities.pk;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.ecsolutions.vendas.entities.Pedido;
-import com.ecsolutions.vendas.entities.Produto;
 
 @Embeddable
 public class ItemPedidoPK  implements Serializable {
@@ -17,9 +17,9 @@ public class ItemPedidoPK  implements Serializable {
 	@JoinColumn(name = "pedido_id")
 	private Pedido pedido;
 	
-	@ManyToOne
-	@JoinColumn(name = "produto_id")
-	private Produto produto;
+	@Column(name = "item_id")
+	private Integer itemId;
+	
 
 	public Pedido getPedido() {
 		return pedido;
@@ -29,20 +29,20 @@ public class ItemPedidoPK  implements Serializable {
 		this.pedido = pedido;
 	}
 
-	public Produto getProduto() {
-		return produto;
+	public Integer getItemId() {
+		return itemId;
 	}
 
-	public void setProduto(Produto produto) {
-		this.produto = produto;
+	public void setItemId(Integer itemId) {
+		this.itemId = itemId;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((itemId == null) ? 0 : itemId.hashCode());
 		result = prime * result + ((pedido == null) ? 0 : pedido.hashCode());
-		result = prime * result + ((produto == null) ? 0 : produto.hashCode());
 		return result;
 	}
 
@@ -55,18 +55,20 @@ public class ItemPedidoPK  implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		ItemPedidoPK other = (ItemPedidoPK) obj;
+		if (itemId == null) {
+			if (other.itemId != null)
+				return false;
+		} else if (!itemId.equals(other.itemId))
+			return false;
 		if (pedido == null) {
 			if (other.pedido != null)
 				return false;
 		} else if (!pedido.equals(other.pedido))
 			return false;
-		if (produto == null) {
-			if (other.produto != null)
-				return false;
-		} else if (!produto.equals(other.produto))
-			return false;
 		return true;
 	}
+
+
 
 	
 	

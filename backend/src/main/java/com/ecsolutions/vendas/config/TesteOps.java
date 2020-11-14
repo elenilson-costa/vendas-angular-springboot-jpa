@@ -2,6 +2,7 @@ package com.ecsolutions.vendas.config;
 
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -40,6 +41,17 @@ public class TesteOps implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
+		
+		/*
+		Cliente cliente = clienteService.findById(1L);
+		Produto produto = produtoService.findById(2L);
+		
+		Pedido pedido = pedidoService.insert(new Pedido (null, cliente, (new Date(System.currentTimeMillis()).toInstant())));
+		ItemPedido item1 = new ItemPedido(pedido, 1, produto, 10, 120.0);
+		
+		itemPedidoRepository.save(item1);
+		*/
+		
 		
 		/*
 		Cliente cliente = clienteService.insert(new Cliente(1L, "Francisco Coimbra", "Av. do Descobrimento"));
